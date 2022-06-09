@@ -43,16 +43,16 @@ The figures 1-3 show the overall model performances for training data (blue) and
   </td></tr>
 </table>
 
-## Model Interpretability Using Shapley Values from Game Theory
-As described above, the neural-prophet model is highly interpretable due to its component-wise additive nature. The figure below show the different model components and their contribution to the predicted sales. The model can seperate the trend and weekly and yearly seasonality components well. In addition, it shows that the past sales (i.e. lagged sales) also have a strong predictive power for future sales. Last but not least, the promo-component impressively reveals that promotion can potentially increase sales by more than 1750 sales-units.
+## Model Interpretability Using Shapley values from game theory
+The Shapley value distibution shows that on average the features with the highest impact on sales are the maximum retail price (i.e. "item_mrp"), the outlet type (i.e. "outlet_type_grocery store", "outlet_type_supermarket_type3") and the unique store id (i.e. "outlet_identifier_out027"). Having a closer look reveales that a higher maximal retail price is correlated with higher sales. This finding is quite surprising since intuitively lower prices should lead to more sales (2b discussed!).
 
 <table>
   <tr><td>
     <img 
-        src="images/results_2.png"
+        src="images/results_4.png"
         alt="Fashion MNIST sprite"  width="1000">
   </td></tr>
   <tr><td align="center">
-    <b>Figure 2. Additive model components such as trend, saisonality, past sales and promo. 
+    <b>Figure 2. Explaining local model decisions of the deep neural network model Model with the use of the Shapley values. Each dot represents a single prediction (model decision). 
   </td></tr>
 </table>
