@@ -1,59 +1,49 @@
-big_mart_sales_prediction
-==============================
+# Predict Bigmart´s Future Sales and Find Driving Features 
 
-A short description of the project.
+## Project Purpose
+Predict sales for different Bigmart outlets using different machine learning regression models such as linear, tree and neural network models. Besides the sales forecast, we extract the feature driving sales by using a game-theoretical approach to make decision making of performant blackbox models transparent.
+## Setup the Environment using Conda to run the JupyterNotebooks
+- $conda create -n myenv python=3.8.11
+- $conda active myenv
+- $pip install -r requirements.txt
 
-test
+## Modeling Results
+The figure below shows the historical sales from 2013 until July 2015 and the 14-day ahead forecast. Apparently, there is a good match beetween the forecast (blue curve) and the actual sales not only for the training period (blue dots) but also for the testing period (red dots).
 
-Project Organization
-------------
+<table>
+  <tr><td>
+    <img 
+        src="images/results_1.png"
+        alt="Fashion MNIST sprite"  width="1000">
+  </td></tr>
+    <tr><td align="center">
+    <b>Figure 1. Historical sales data and future sales estimates derived by applying an additive regression model combined with deep learning. 
+  </td></tr>
+</table>
 
-    ├── LICENSE
-    ├── Makefile           <- Makefile with commands like `make data` or `make train`
-    ├── README.md          <- The top-level README for developers using this project.
-    ├── data
-    │   ├── external       <- Data from third party sources.
-    │   ├── interim        <- Intermediate data that has been transformed.
-    │   ├── processed      <- The final, canonical data sets for modeling.
-    │   └── raw            <- The original, immutable data dump.
-    │
-    ├── docs               <- A default Sphinx project; see sphinx-doc.org for details
-    │
-    ├── models             <- Trained and serialized models, model predictions, or model summaries
-    │
-    ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-    │                         the creator's initials, and a short `-` delimited description, e.g.
-    │                         `1.0-jqp-initial-data-exploration`.
-    │
-    ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-    │
-    ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-    │   └── figures        <- Generated graphics and figures to be used in reporting
-    │
-    ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-    │                         generated with `pip freeze > requirements.txt`
-    │
-    ├── setup.py           <- makes project pip installable (pip install -e .) so src can be imported
-    ├── src                <- Source code for use in this project.
-    │   ├── __init__.py    <- Makes src a Python module
-    │   │
-    │   ├── data           <- Scripts to download or generate data
-    │   │   └── make_dataset.py
-    │   │
-    │   ├── features       <- Scripts to turn raw data into features for modeling
-    │   │   └── build_features.py
-    │   │
-    │   ├── models         <- Scripts to train models and then use trained models to make
-    │   │   │                 predictions
-    │   │   ├── predict_model.py
-    │   │   └── train_model.py
-    │   │
-    │   └── visualization  <- Scripts to create exploratory and results oriented visualizations
-    │       └── visualize.py
-    │
-    └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
+## Model Evaluation
+The mean average prediction error is in the range of 4-6 % as depicted below.
+<table>
+  <tr><td>
+    <img 
+        src="images/results_3.png"
+        alt="Fashion MNIST sprite"  width="1000">
+  </td></tr>
+  <tr><td align="center">
+    <b>Figure 2. Cross-validated mean average error (mape). 
+  </td></tr>
+</table>
 
+## Model Interpretability
+As described above, the neural-prophet model is highly interpretable due to its component-wise additive nature. The figure below show the different model components and their contribution to the predicted sales. The model can seperate the trend and weekly and yearly seasonality components well. In addition, it shows that the past sales (i.e. lagged sales) also have a strong predictive power for future sales. Last but not least, the promo-component impressively reveals that promotion can potentially increase sales by more than 1750 sales-units.
 
---------
-
-<p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
+<table>
+  <tr><td>
+    <img 
+        src="images/results_2.png"
+        alt="Fashion MNIST sprite"  width="1000">
+  </td></tr>
+  <tr><td align="center">
+    <b>Figure 2. Additive model components such as trend, saisonality, past sales and promo. 
+  </td></tr>
+</table>
