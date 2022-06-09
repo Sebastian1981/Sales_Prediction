@@ -14,7 +14,7 @@ The figures 1-3 show the overall model performances for training data (blue) and
   <tr><td>
     <img 
         src="images/results_1.png"
-        alt="Fashion MNIST sprite"  width="800">
+        alt="Fashion MNIST sprite"  width="400">
   </td></tr>
     <tr><td align="center">
     <b>Figure 1. Comparison of true sales and model forecasts using a simple linear model. 
@@ -25,7 +25,7 @@ The figures 1-3 show the overall model performances for training data (blue) and
   <tr><td>
     <img 
         src="images/results_2.png"
-        alt="Fashion MNIST sprite"  width="800">
+        alt="Fashion MNIST sprite"  width="400">
   </td></tr>
     <tr><td align="center">
     <b>Figure 2. Comparison of true sales and model forecasts using a gradient-boosted tree model. 
@@ -36,7 +36,7 @@ The figures 1-3 show the overall model performances for training data (blue) and
   <tr><td>
     <img 
         src="images/results_3.png"
-        alt="Fashion MNIST sprite"  width="800">
+        alt="Fashion MNIST sprite"  width="400">
   </td></tr>
     <tr><td align="center">
     <b>Figure 3. Comparison of true sales and model forecasts using a deep neural network model with 2 hidden layers. 
