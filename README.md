@@ -2,9 +2,12 @@
 
 ## Project Purpose
 Predict sales for different Bigmart outlets using different machine learning regression models such as linear, tree and neural network models. Besides the sales forecast, we extract the feature driving sales by using a game-theoretical approach to make decision making of performant blackbox models transparent.
-## Setup the Environment using Conda to run the JupyterNotebooks
+## Running the JupyterNotebooks
+setup an environment using anaconda:
 - $conda create -n myenv python=3.8.11
 - $conda active myenv
+
+install the dependencies using pip
 - $pip install -r requirements.txt
 
 ## Modeling Results & Evaluation
@@ -44,7 +47,7 @@ The figures 1-3 show the overall model performances for training data (blue) and
 </table>
 
 ## Model Interpretability Using Shapley values from game theory
-The Shapley value distibution shows that on average the features with the highest impact on sales are the maximum retail price (i.e. "item_mrp"), the outlet type (i.e. "outlet_type_grocery store", "outlet_type_supermarket_type3") and the unique store id (i.e. "outlet_identifier_out027"). Having a closer look reveales that a higher maximal retail price is correlated with higher sales. This finding is quite surprising since intuitively lower prices should lead to more sales (2b discussed!).
+The Shapley value distibution shows that on average the features with the highest impact on sales are the maximum retail price (i.e. "item_mrp"), the outlet type (i.e. "outlet_type_grocery store", "outlet_type_supermarket_type3") and the unique store id (i.e. "outlet_identifier_out027"). Having a closer look reveales that a higher maximal retail price is correlated with higher sales. This finding is quite surprising since intuitively lower prices should lead to more sales. However, this finding is in agreement with the exploratory data analysis as shown in the notebook.
 
 <table>
   <tr><td>
